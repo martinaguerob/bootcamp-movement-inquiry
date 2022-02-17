@@ -1,4 +1,4 @@
-package com.nttdata.movementinquiry.model;
+package com.nttdata.movementinquiry.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,16 +10,15 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@Document(collection = "balance-inquiry")
-public class Inquiry {
+@Document(collection = "movement-bank-account")
+public class MovementBankAccount {
 
     @Id
     private String id;
-    private String account;
-    private String typeAccount;
     private String description;
     private Float amount;
     @DateTimeFormat(pattern = "yyyy-mm-dd hh:mm:ss")
     private Date date;
     private Boolean status;
+    private String idAccount;
 }
