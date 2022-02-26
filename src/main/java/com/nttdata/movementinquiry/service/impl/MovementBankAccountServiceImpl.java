@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Date;
+
 @Service
 public class MovementBankAccountServiceImpl implements MovementBankAccountService {
 
@@ -21,6 +23,7 @@ public class MovementBankAccountServiceImpl implements MovementBankAccountServic
 
     @Override
     public Mono<MovementBankAccount> save(MovementBankAccount entity) {
+        entity.setDate(new Date());
         entity.setStatus(true);
         return movementBankAccountRepository.save(entity);
     }
@@ -50,7 +53,7 @@ public class MovementBankAccountServiceImpl implements MovementBankAccountServic
     }
 
     @Override
-    public Flux<MovementBankAccount> findByIdAccount(String idAccount) {
-        return movementBankAccountRepository.findByIdAccount(idAccount);
+    public Flux<MovementBankAccount> findByNumberAccount(String numberAccount) {
+        return movementBankAccountRepository.findByNumberAccount(numberAccount);
     }
 }

@@ -27,25 +27,24 @@ public class MovementBankAccountController {
         return movementBankAccountService.save(inquiry);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/bank-account/update")
     @ResponseStatus(HttpStatus.OK)
     public Mono<MovementBankAccount> updateMovements(@RequestBody MovementBankAccount inquiry){
         System.out.println("Actualizar movimiento");
         return movementBankAccountService.update(inquiry);
     }
 
-    @PutMapping("/delete/{id}")
+    @PutMapping("/bank-account/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Mono<MovementBankAccount> deleteMovements(@PathVariable String id){
         System.out.println("Eliminar movimiento - cambiar de estado");
         return movementBankAccountService.delete(id);
     }
 
-    @GetMapping("/{account}")
+    @GetMapping("/bank-account /number/{numberAccount}")
     @ResponseStatus(HttpStatus.OK)
-    public  Flux<MovementBankAccount> findMovementsByAccount(@PathVariable String idAccount){
+    public  Flux<MovementBankAccount> findMovementsByAccount(@PathVariable String numberAccount){
         System.out.println("Listar movimientos de una cuenta");
-        return movementBankAccountService.findByIdAccount(idAccount);
+        return movementBankAccountService.findByNumberAccount(numberAccount);
     }
-
 }

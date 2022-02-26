@@ -6,5 +6,5 @@ import reactor.core.publisher.Flux;
 
 public interface MovementBankAccountRepository extends ReactiveMongoRepository<MovementBankAccount, String> {
 
-    Flux<MovementBankAccount> findByIdAccount(String idAccount);
+    Flux<MovementBankAccount> findByNumberAccount(String numberAccount);
 }

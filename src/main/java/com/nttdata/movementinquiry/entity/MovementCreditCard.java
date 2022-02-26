@@ -16,9 +16,9 @@ public class MovementCreditCard {
     @Id
     private String id;
     private String description;
-    private Float amount;
-    @DateTimeFormat(pattern = "yyyy-mm-dd hh:mm:ss")
+    private Double amount;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date date;
     private Boolean status;
-    private String idAccount;
+    private String numberAccount;
 }
