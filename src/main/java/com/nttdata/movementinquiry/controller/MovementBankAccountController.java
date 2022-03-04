@@ -41,7 +41,7 @@ public class MovementBankAccountController {
         return movementBankAccountService.delete(id);
     }
 
-    @GetMapping("/bank-account /number/{numberAccount}")
+    @GetMapping("/bank-account/number/{numberAccount}")
     @ResponseStatus(HttpStatus.OK)
     public  Flux<MovementBankAccount> findMovementsByAccount(@PathVariable String numberAccount){
         System.out.println("Listar movimientos de una cuenta");
